@@ -47,6 +47,14 @@ public class TCP_Server {
         }
     }
     public static void main(String[] args) {
+
+
+        Cats cats= Cats.getInstance();
+        cats.add(new Cat("Max","persian",1));
+        cats.add(new Cat("Barsik","persian",2));
+        cats.add(new Cat("Pushok","siamese",1));
+
+
         int port = 9999;
         if (args.length !=0) {
             port = Integer.parseInt(args[0]);

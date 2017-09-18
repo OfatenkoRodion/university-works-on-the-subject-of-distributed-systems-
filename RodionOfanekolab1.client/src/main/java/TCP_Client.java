@@ -1,12 +1,6 @@
 import java.io.*;
 import java.net.*;
 
-/**
- * Демонстрация потоковых сокетов
- * Простой клиент эхо-сервера TCP/IP
- * Синтаксис командной строки для запуска программы-клиента:
- * java tcp.TCP_Client [<имя_узла> <номер_порта>]
- */
 public class TCP_Client {
 
     private BufferedReader is = null;

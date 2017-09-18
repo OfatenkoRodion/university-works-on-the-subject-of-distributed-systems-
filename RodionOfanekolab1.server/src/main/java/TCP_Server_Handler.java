@@ -33,9 +33,10 @@ public class TCP_Server_Handler implements Runnable {
             while (!done) {
                 msg = is.readLine();
                 System.out.println("Receive from client : " + msg);
-                os.println(msg);
+                os.println(CommandSelection.select(msg));
                 os.flush();
-                if (msg.equals("quit")) {
+
+                if (msg.equals("end")) {
                     done = true;
                 }
             }
