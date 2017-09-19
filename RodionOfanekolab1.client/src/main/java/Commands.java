@@ -8,6 +8,9 @@ public enum Commands {
     GET_ALL,
     DEL_ALL;
 
+    public static  String toString2() {
+        return "hello";
+    }
 }
 
 
