@@ -17,8 +17,11 @@ public class ClientUDP {
         send_packet = new DatagramPacket (buff, message.length(), remoutIP_Adress, port);
         udp_socket.send (send_packet);
         udp_socket.receive (receive_packet);
-
         return  new String (receive_packet.getData (), 0, receive_packet.getLength ());
+    }
+    public void initialization() throws SocketException {
+        udp_socket = new DatagramSocket ();
+        receive_packet = new DatagramPacket (buff, BUFF_LENGTH);
     }
     public void closeConnection(){
         udp_socket.close ();
@@ -28,9 +31,5 @@ public class ClientUDP {
     }
     public void setRemoutIP_Adress(String address) throws UnknownHostException {
         remoutIP_Adress = InetAddress.getByName (address);
-    }
-    public void initialization() throws SocketException {
-        udp_socket = new DatagramSocket ();
-        receive_packet = new DatagramPacket (buff, BUFF_LENGTH);
     }
 }

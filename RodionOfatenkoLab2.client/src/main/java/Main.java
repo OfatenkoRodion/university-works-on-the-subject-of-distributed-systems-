@@ -7,16 +7,21 @@ public class Main {
 
         String address = "localhost";
         int server_port = 5555;
+        String messageFromServer="";
+        String messageToServer="";
         try {
             ClientUDP clientUDP = new ClientUDP ();
             clientUDP.setPort(server_port);
             clientUDP.setRemoutIP_Adress(address);
-
             clientUDP.initialization();
-            System.out.println ("The client is started ...");
 
-            String messageFromServer= clientUDP.sentMessageToServer("fuck");
-            System.out.println ("Server told: "+messageFromServer);
+            while (!messageToServer.equals("END")) {
+                messageToServer = CommandSelection.select();
+                System.out.println("Our command " + messageToServer);
+
+                messageFromServer = clientUDP.sentMessageToServer(messageToServer);
+                System.out.println("Server told: " + messageFromServer);
+            }
 
             clientUDP.closeConnection();
         }
