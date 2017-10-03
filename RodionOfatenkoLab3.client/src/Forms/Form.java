@@ -5,6 +5,7 @@ import sun.misc.IOUtils;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.net.URL;
 
 import static Java.GetURL.getHTML;
@@ -17,6 +18,7 @@ public class Form {
     private JButton послатьДанныеНаСерверButton;
     private JButton получитьКодСтраницыURLButton;
     private JTextArea ответTextArea;
+    private JEditorPane editorPane1;
 
     public Form() {
         ответTextArea.setLineWrap(true);
@@ -36,6 +38,8 @@ public class Form {
                 try {
                     String url=textField1.getText();
 
+
+                    show(url);
                     ответTextArea.setText( getHTML(url));
                 }
                 catch (Exception ex) {
@@ -43,5 +47,17 @@ public class Form {
                 }
             }
         });
+    }
+    public static void show(String url) throws IOException {
+        JFrame.setDefaultLookAndFeelDecorated(true);
+        JFrame frame = new JFrame("Demo");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //
+        JEditorPane editorPane = new JEditorPane(url);
+        editorPane.setEditable(false);
+        frame.getContentPane().add(editorPane);
+        //
+        frame.setSize(700, 800);
+        frame.setVisible(true);
     }
 }

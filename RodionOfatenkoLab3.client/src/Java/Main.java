@@ -10,6 +10,7 @@ public class Main {
         frame.setContentPane( new Form().form);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
+
         frame.setVisible(true);
     }
 
