@@ -7,33 +7,22 @@ import java.net.URLConnection;
 import java.util.Date;
 
 public class GetURLInfo {
-    public static void printinfo(URL url) throws IOException {
-        // Получаем объект URLConnection from URL
+    public static String getURL_info(URL url) throws IOException {
         URLConnection c = url.openConnection();
-        // Создаем подключение к URL
         c.connect();
-        // Выводим на консоль информацию о содержимом URL
-        System.out.println("  Content Type: " +
-                c.getContentType());
-        System.out.println("  Content Encoding: " +
-                c.getContentEncoding());
-        System.out.println("  Content Length: " +
-                c.getContentLength());
-        System.out.println("  Date: " + new Date(c.getDate()));
-        System.out.println("  Last Modified: " +
-                new Date(c.getLastModified()));
-        System.out.println("  Expiration: " +
-                new Date(c.getExpiration()));
-        // Если это HTTP-подключение,
-        // отображаем некоторую дополнительную информацию
+        String msg="";
+        msg+="  Content Type: " + c.getContentType()+"\r\n";
+        msg+="  Content Encoding: " + c.getContentEncoding()+"\r\n";
+        msg+="  Content Length: " + c.getContentLength()+"\r\n";
+        msg+="  Date: " + new Date(c.getDate())+"\r\n";
+        msg+="  Last Modified: " + new Date(c.getLastModified())+"\r\n";
+        msg+="  Expiration: " + new Date(c.getExpiration())+"\r\n";
         if (c instanceof HttpURLConnection) {
             HttpURLConnection h = (HttpURLConnection) c;
-            System.out.println("  Request Method: " +
-                    h.getRequestMethod());
-            System.out.println("  Response Message: " +
-                    h.getResponseMessage());
-            System.out.println("  Response Code: " +
-                    h.getResponseCode());
+            msg+="  Request Method: " + h.getRequestMethod()+"\r\n";
+            msg+="  Response Message: " + h.getResponseMessage()+"\r\n";
+            msg+="  Response Code: " + h.getResponseCode()+"\r\n";
         }
+        return msg;
     }
 }

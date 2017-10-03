@@ -1,19 +1,16 @@
 package Java;
 
-import java.net.URL;
+import Forms.Form;
 
-import static Java.GetURLInfo.printinfo;
+import javax.swing.*;
 
 public class Main {
     public static void main(String[] args) {
-        try {
-            String url="https://zf.fm";
-            printinfo(new URL(url));
-        }
-        catch (Exception e) {
-            System.err.println(e);
-            System.err.println("Usage: java GetURLInfo <url>");
-        }
+        JFrame frame = new JFrame("Lab3");
+        frame.setContentPane( new Form().form);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
     }
 
 }
