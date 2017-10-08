@@ -1,13 +1,10 @@
 package Client;
-import Server.iCommand;
-import java.rmi.NotBoundException;
-import java.rmi.RemoteException;
-import java.rmi.registry.LocateRegistry;
-import java.rmi.registry.Registry;
+
+import javax.swing.*;
 
 public class Main {
     public static void main(String[] args) {
-        if (System.getSecurityManager()==null){
+      /*  if (System.getSecurityManager()==null){
             System.setSecurityManager(new SecurityManager());
         }
 
@@ -24,6 +21,13 @@ public class Main {
             e.printStackTrace();
         } catch (NotBoundException e) {
             e.printStackTrace();
-        }
+        }*/
+
+        JFrame frame = new JFrame("Lab4");
+        frame.setContentPane( new MainForm().panel1);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
     }
+
 }
