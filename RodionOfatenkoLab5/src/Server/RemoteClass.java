@@ -1,18 +1,23 @@
 package Server;
 
-import Cats.CommandSelection;
 import Cats.Cat;
 import Cats.Cats;
 
+import javax.rmi.PortableRemoteObject;
 import java.rmi.RemoteException;
 
-public class Command  implements iCommand
+public class RemoteClass extends PortableRemoteObject implements RemoteInterface
 {
-    @Override
-    public String sentCommand(String command) throws RemoteException
+
+    /**
+     * Initializes the object by calling <code>exportObject(this)</code>.
+     *
+     * @throws RemoteException if export fails.
+     */
+    protected RemoteClass() throws RemoteException
     {
-        return CommandSelection.select(command);
     }
+
     @Override
     public String add(String name,String breed, int age) throws RemoteException
     {

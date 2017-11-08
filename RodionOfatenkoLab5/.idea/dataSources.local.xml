@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="mysql@localhost" uuid="3a5cf4cd-97d2-4d2e-a5f9-95729015a1d7">
+      <database-info product="MySQL" version="5.7.20-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.40 ( Revision: 402933ef52cad9aa82624e80acbea46e3a701ce6 )">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <introspection-schemas>*:labjdbc,mysql</introspection-schemas>
+    </data-source>
+    <data-source name="postgres@localhost" uuid="a9ab7009-f763-40b0-9e99-5a42c7f1f5c1">
+      <database-info product="PostgreSQL" version="9.6.5" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.1.1">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>postgres</user-name>
+      <introspection-schemas>postgres:public</introspection-schemas>
+    </data-source>
+    <data-source name="LabJDBC@localhost" uuid="3a6ef52d-7b13-4005-8c4a-47c9c6199724">
+      <database-info product="MySQL" version="5.7.20-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.40 ( Revision: 402933ef52cad9aa82624e80acbea46e3a701ce6 )">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <introspection-schemas>*:labjdbc</introspection-schemas>
+    </data-source>
+  </component>
+</project>

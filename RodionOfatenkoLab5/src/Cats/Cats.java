@@ -4,9 +4,9 @@ import java.util.Vector;
 
 public class Cats extends Vector<Cat> {
 
-    private static Cats  ourInstance = new Cats ();
+    private static Cats ourInstance = new Cats();
 
-    public static Cats  getInstance() {
+    public static Cats getInstance() {
         return ourInstance;
     }
 
