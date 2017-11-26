@@ -1,4 +1,4 @@
-package Server;
+package MyServer;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;

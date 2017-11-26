@@ -1,4 +1,4 @@
-package Server;
+package MyServer;
 
 import DataBase.TableBelonging;
 import DataBase.TableHouse;
