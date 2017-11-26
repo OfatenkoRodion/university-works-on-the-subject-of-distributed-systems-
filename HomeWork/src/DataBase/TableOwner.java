@@ -2,7 +2,7 @@ package DataBase;
 
 import java.sql.*;
 
-public class ConnectToDB
+public class TableOwner
 {
     public static String createTable() throws ClassNotFoundException, SQLException
     {

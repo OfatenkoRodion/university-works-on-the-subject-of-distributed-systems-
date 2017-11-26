@@ -8,10 +8,10 @@ public class Main
     {
         try
         {
-            //ConnectToDB.createTable();
-            //ConnectToDB.deleteTable();
-            //ConnectToDB.addOwner("Jon",35111);
-            System.out.print(ConnectToDB.getAll());
+
+            TableBelonging.createTable();
+            TableBelonging.addBelonging(1,1);
+            System.out.print(TableBelonging.getAll());
 
         } catch (ClassNotFoundException e)
         {

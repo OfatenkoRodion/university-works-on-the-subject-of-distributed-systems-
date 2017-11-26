@@ -13,22 +13,80 @@
     <schema id="7" parent="1" name="sakila"/>
     <schema id="8" parent="1" name="sys"/>
     <schema id="9" parent="1" name="world"/>
-    <table id="10" parent="2" name="owner"/>
-    <column id="11" parent="10" name="id">
+    <table id="10" parent="2" name="belonging"/>
+    <table id="11" parent="2" name="house"/>
+    <table id="12" parent="2" name="owner"/>
+    <column id="13" parent="10" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="12" parent="10" name="name">
+    <column id="14" parent="10" name="id_Owner">
       <Position>2</Position>
-      <DataType>text|0</DataType>
+      <DataType>int(11)|0</DataType>
     </column>
-    <column id="13" parent="10" name="telefon">
+    <column id="15" parent="10" name="id_House">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <key id="14" parent="10" name="PRIMARY">
+    <index id="16" parent="10" name="id_House">
+      <ColNames>id_House</ColNames>
+    </index>
+    <index id="17" parent="10" name="id_Owner">
+      <ColNames>id_Owner</ColNames>
+    </index>
+    <key id="18" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="19" parent="10" name="belonging_ibfk_1">
+      <ColNames>id_Owner</ColNames>
+      <RefSchemaName>homework</RefSchemaName>
+      <RefTableName>owner</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="20" parent="10" name="belonging_ibfk_2">
+      <ColNames>id_House</ColNames>
+      <RefSchemaName>homework</RefSchemaName>
+      <RefTableName>house</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="21" parent="11" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="22" parent="11" name="adress">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="23" parent="11" name="price">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="24" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="25" parent="12" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="26" parent="12" name="name">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="27" parent="12" name="telefon">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="28" parent="12" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
